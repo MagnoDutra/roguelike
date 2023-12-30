@@ -11,6 +11,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Transform gunArm;
     [SerializeField] private GameObject shootPrefab;
     [SerializeField] private Transform firePoint;
+    [SerializeField] private float timeBetweenShots;
+    private float lastShot = 0;
 
     [Header("Movement")]
     [SerializeField] private float moveSpeed;
@@ -61,9 +63,13 @@ public class PlayerController : MonoBehaviour
 
         gunArm.rotation = Quaternion.Euler(0, 0, angle);
 
-        if(Input.GetMouseButton(0))
+        if(Input.GetMouseButton(0) && lastShot <= 0)
         {
             Instantiate(shootPrefab, firePoint.position, firePoint.rotation);
+            lastShot = timeBetweenShots;
         }
+
+        lastShot -= Time.deltaTime;
+        lastShot = Mathf.Max(0, lastShot);
     }
 }
