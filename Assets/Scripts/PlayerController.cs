@@ -7,8 +7,12 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D rb;
     private Animator anim;
 
+    [Header("Gun")]
     [SerializeField] private Transform gunArm;
+    [SerializeField] private GameObject shootPrefab;
+    [SerializeField] private Transform firePoint;
 
+    [Header("Movement")]
     [SerializeField] private float moveSpeed;
     private Vector2 moveInput;
 
@@ -56,5 +60,10 @@ public class PlayerController : MonoBehaviour
         float angle = Mathf.Atan2(mouseDistance.y, mouseDistance.x) * Mathf.Rad2Deg; // Atan retorna em radianos, Multiplico pela constante que me devolvera em graus
 
         gunArm.rotation = Quaternion.Euler(0, 0, angle);
+
+        if(Input.GetMouseButton(0))
+        {
+            Instantiate(shootPrefab, firePoint.position, firePoint.rotation);
+        }
     }
 }
