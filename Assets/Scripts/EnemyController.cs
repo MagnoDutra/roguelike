@@ -7,6 +7,7 @@ public class EnemyController : MonoBehaviour
     [SerializeField] private float moveSpeed;
     [SerializeField] private float rangeToChasePlayer;
     [SerializeField] public int health = 150;
+    [SerializeField] public GameObject[] deathSplatters;
 
     private Vector3 moveDir;
     private Rigidbody2D rb;
@@ -42,6 +43,10 @@ public class EnemyController : MonoBehaviour
 
         if(health <= 0)
         {
+            int selectedSplatter = Random.Range(0, deathSplatters.Length);
+            int rotation = Random.Range(0, 4);
+            Instantiate(deathSplatters[selectedSplatter], transform.position, Quaternion.Euler(0f, 0f, rotation * 90));
+
             Destroy(gameObject);
         }
     }

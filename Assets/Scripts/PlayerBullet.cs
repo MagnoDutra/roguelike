@@ -25,7 +25,12 @@ public class PlayerBullet : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         Instantiate(impactFXPrefab, transform.position, Quaternion.identity);
-        other.GetComponent<EnemyController>()?.DamageEnemy(10);
+
+        if (other.CompareTag("Enemy"))
+        {
+            other.GetComponent<EnemyController>()?.DamageEnemy(50);
+        }
+
         Destroy(this.gameObject);
     }
 
