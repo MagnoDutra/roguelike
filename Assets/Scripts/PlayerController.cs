@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    public static PlayerController instance;
+
     private Rigidbody2D rb;
     private Animator anim;
 
@@ -17,6 +19,11 @@ public class PlayerController : MonoBehaviour
     [Header("Movement")]
     [SerializeField] private float moveSpeed;
     private Vector2 moveInput;
+
+    private void Awake()
+    {
+        instance = this;
+    }
 
     void Start()
     {
