@@ -11,7 +11,8 @@ public class UIController : MonoBehaviour
 
     public Slider healthSlider;
     public TextMeshProUGUI healthText;
-
+    public GameObject deathScreen;
+    
     private void Awake()
     {
         instance = this;

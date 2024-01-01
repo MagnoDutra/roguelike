@@ -34,9 +34,13 @@ public class EnemyController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (sr.isVisible)
+        if (sr.isVisible && PlayerController.instance.gameObject.activeInHierarchy)
         {            
             AttackPlayer();
+        }
+        else
+        {
+            rb.velocity = Vector2.zero;
         }
 
         anim.SetBool("isMoving", moveDir != Vector3.zero);
@@ -50,7 +54,7 @@ public class EnemyController : MonoBehaviour
         }
         else
         {
-            moveDir = Vector3.zero;
+            moveDir = Vector2.zero;
         }
 
         rb.velocity = moveDir * moveSpeed;
