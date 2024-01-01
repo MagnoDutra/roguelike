@@ -270,7 +270,7 @@ GameObject:
   m_Component:
   - component: {fileID: 604317820}
   - component: {fileID: 604317821}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GunHand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -437,7 +437,7 @@ GameObject:
   m_Component:
   - component: {fileID: 640898839}
   - component: {fileID: 640898840}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -520,7 +520,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 789024188}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FirePoint
   m_TagString: Untagged
   m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
@@ -552,7 +552,7 @@ GameObject:
   m_Component:
   - component: {fileID: 840361020}
   - component: {fileID: 840361021}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Shadow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -639,7 +639,7 @@ GameObject:
   - component: {fileID: 983554672}
   - component: {fileID: 983554671}
   - component: {fileID: 983554673}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -775,7 +775,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1648076039}
   - component: {fileID: 1648076040}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Hand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -858,16 +858,12 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 2322979293531057378, guid: 798b51c6841d3c44dacdeae36ad0a6c1, type: 3}
-      propertyPath: bullet
-      value: 
-      objectReference: {fileID: 3882490276504254853, guid: 0f1f869430dd35b408aef3d7aa6212e2, type: 3}
-    - target: {fileID: 2322979293531057378, guid: 798b51c6841d3c44dacdeae36ad0a6c1, type: 3}
-      propertyPath: shouldShoot
-      value: 1
+      propertyPath: shootRange
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 3211438919745272323, guid: 798b51c6841d3c44dacdeae36ad0a6c1, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 6.96
+      value: 9.89
       objectReference: {fileID: 0}
     - target: {fileID: 3211438919745272323, guid: 798b51c6841d3c44dacdeae36ad0a6c1, type: 3}
       propertyPath: m_LocalPosition.y

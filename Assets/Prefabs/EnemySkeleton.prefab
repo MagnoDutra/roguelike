@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7286790410312743265}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: firePoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 6258674607701502047}
   - component: {fileID: 2322979293531057378}
   - component: {fileID: 1688041273392660218}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: EnemySkeleton
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -161,8 +161,8 @@ MonoBehaviour:
   - {fileID: 5960118920202339278, guid: e20dccdc06c44244dbbf5841b2e1aeaf, type: 3}
   - {fileID: 4394582300264959, guid: 425940908b25daa4ca3af310b122da09, type: 3}
   hitEffect: {fileID: 5917938570665050163, guid: 75d50506a5e344047940b19e2bcdcc9f, type: 3}
-  shouldShoot: 0
-  bullet: {fileID: 0}
+  shouldShoot: 1
+  bullet: {fileID: 3216845436504424933, guid: 98642efb954743540b361f28e239865f, type: 3}
   firePoint: {fileID: 7286790410312743265}
   fireRate: 1
 --- !u!95 &1688041273392660218
@@ -196,7 +196,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2112924928300810489}
   - component: {fileID: 6009345890382469351}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
