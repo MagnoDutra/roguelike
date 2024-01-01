@@ -138,7 +138,7 @@ GameObject:
   - component: {fileID: 241253458}
   m_Layer: 0
   m_Name: EnemySkeleton
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -157,6 +157,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 3
   rangeToChasePlayer: 7
+  health: 150
+  deathSplatters:
+  - {fileID: 1132970710327670590, guid: 28410d3719db3eb4d81966c7038f7ae5, type: 3}
+  - {fileID: 7602618761256552780, guid: 68a9cfaa60d8d774d82116891ed6d0b9, type: 3}
+  - {fileID: 5960118920202339278, guid: e20dccdc06c44244dbbf5841b2e1aeaf, type: 3}
+  - {fileID: 4394582300264959, guid: 425940908b25daa4ca3af310b122da09, type: 3}
+  hitEffect: {fileID: 5917938570665050163, guid: 75d50506a5e344047940b19e2bcdcc9f, type: 3}
 --- !u!50 &241253455
 Rigidbody2D:
   serializedVersion: 4
@@ -726,7 +733,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: -7537196482120660328, guid: 02027016afbc5d544ab92ba819bc8094, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -868,7 +875,7 @@ GameObject:
   - component: {fileID: 983554673}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

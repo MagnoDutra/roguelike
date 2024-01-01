@@ -8,6 +8,7 @@ public class EnemyController : MonoBehaviour
     [SerializeField] private float rangeToChasePlayer;
     [SerializeField] public int health = 150;
     [SerializeField] public GameObject[] deathSplatters;
+    [SerializeField] public GameObject hitEffect;
 
     private Vector3 moveDir;
     private Rigidbody2D rb;
@@ -40,6 +41,8 @@ public class EnemyController : MonoBehaviour
     public void DamageEnemy(int damage)
     {
         health -= damage;
+
+        Instantiate(hitEffect, transform.position, Quaternion.identity);
 
         if(health <= 0)
         {
