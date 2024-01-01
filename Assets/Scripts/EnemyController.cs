@@ -14,6 +14,12 @@ public class EnemyController : MonoBehaviour
     private Rigidbody2D rb;
     private Animator anim;
 
+    [SerializeField] private bool shouldShoot;
+    [SerializeField] private GameObject bullet;
+    [SerializeField] private Transform firePoint;
+    [SerializeField] private float fireRate;
+    private float fireTimer;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -36,6 +42,16 @@ public class EnemyController : MonoBehaviour
         rb.velocity = moveDir * moveSpeed;
 
         anim.SetBool("isMoving", moveDir != Vector3.zero);
+
+        if(shouldShoot && fireTimer <= 0)
+        {
+            fireTimer = fireRate;
+            Instantiate(bullet, firePoint.position, Quaternion.identity);
+        }
+        else
+        {
+            fireTimer -= Time.deltaTime;
+        }
     }
 
     public void DamageEnemy(int damage)
