@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
 
     private Rigidbody2D rb;
     private Animator anim;
+    public SpriteRenderer bodySr;
 
     [Header("Gun")]
     [SerializeField] private Transform gunArm;

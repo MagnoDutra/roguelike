@@ -8,6 +8,8 @@ public class PlayerHealthController : MonoBehaviour
 
     public int currentHealth { get; private set; }
     [SerializeField] private int maxHealth;
+    [SerializeField] private float invincibleLength;
+    private float invincibleTimer;
 
     private void Awake()
     {
@@ -26,21 +28,35 @@ public class PlayerHealthController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(invincibleTimer > 0)
+        {
+            invincibleTimer -= Time.deltaTime;
+
+            if(invincibleTimer <= 0)
+            {
+                PlayerController.instance.bodySr.color = new Color(1, 1, 1, 1);
+            }
+        }
     }
 
     public void DamagePlayer()
     {
-        currentHealth--;
-        
-        if (currentHealth <= 0)
+        if(invincibleTimer <= 0)
         {
-            PlayerController.instance.gameObject.SetActive(false);
-            UIController.instance.deathScreen.SetActive(true);
+            currentHealth--;
+            invincibleTimer = invincibleLength;
+            PlayerController.instance.bodySr.color = new Color(1,1,1,0.5f);
+
+            if (currentHealth <= 0)
+            {
+                PlayerController.instance.gameObject.SetActive(false);
+                UIController.instance.deathScreen.SetActive(true);
+            }
+
+            UIController.instance.healthSlider.value = currentHealth;
+            UIController.instance.healthText.text = currentHealth.ToString() + " / " + maxHealth.ToString();
         }
 
-        UIController.instance.healthSlider.value = currentHealth;
-        UIController.instance.healthText.text = currentHealth.ToString() + " / " + maxHealth.ToString();
     }
 
 }

@@ -1225,6 +1225,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e237d206409920e4dbee72780181ae2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bodySr: {fileID: 640898840}
   gunArm: {fileID: 604317820}
   shootPrefab: {fileID: 3882490276504254853, guid: 0f1f869430dd35b408aef3d7aa6212e2, type: 3}
   firePoint: {fileID: 789024188}
@@ -1842,6 +1843,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 5
+  invincibleLength: 2
 --- !u!4 &1829633941
 Transform:
   m_ObjectHideFlags: 0
