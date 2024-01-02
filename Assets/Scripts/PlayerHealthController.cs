@@ -59,4 +59,10 @@ public class PlayerHealthController : MonoBehaviour
 
     }
 
+    public void MakeInvincible(float time)
+    {
+        invincibleTimer = time;
+        PlayerController.instance.bodySr.color = new Color(1, 1, 1, 1);
+    }
+
 }

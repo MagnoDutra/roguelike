@@ -1231,6 +1231,10 @@ MonoBehaviour:
   firePoint: {fileID: 789024188}
   timeBetweenShots: 0.2
   moveSpeed: 5
+  dashSpeed: 8
+  dashLength: 0.5
+  dashCooldown: 1
+  dashInvincibility: 0.5
 --- !u!58 &983554671
 CircleCollider2D:
   m_ObjectHideFlags: 0
