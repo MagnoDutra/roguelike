@@ -24,7 +24,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float dashCooldown = 1f;
     [SerializeField] private float dashInvincibility = .5f;
 
-    private float dashTimer;
+    public float dashTimer { get; private set; }
     private float dashCDTimer;
     private float activeMoveSpeed;
     private Vector2 moveInput;
