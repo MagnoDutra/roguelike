@@ -19,6 +19,14 @@ public class PlayerController : MonoBehaviour
 
     [Header("Movement")]
     [SerializeField] private float moveSpeed;
+    [SerializeField] private float dashSpeed = 8;
+    [SerializeField] private float dashLength = 0.5f;
+    [SerializeField] private float dashCooldown = 1f;
+    [SerializeField] private float dashInvincibility = .5f;
+
+    private float dashTimer;
+    private float dashCDTimer;
+    private float activeMoveSpeed;
     private Vector2 moveInput;
 
     private void Awake()
@@ -30,6 +38,8 @@ public class PlayerController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+
+        activeMoveSpeed = moveSpeed;
     }
 
     // Update is called once per frame
@@ -40,7 +50,7 @@ public class PlayerController : MonoBehaviour
 
         moveInput.Normalize();
 
-        rb.velocity = moveInput * moveSpeed;
+        rb.velocity = moveInput * activeMoveSpeed;
 
         if (moveInput != Vector2.zero) 
         {
@@ -75,6 +85,30 @@ public class PlayerController : MonoBehaviour
         {
             Instantiate(shootPrefab, firePoint.position, firePoint.rotation);
             lastShot = timeBetweenShots;
+        }
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            if(dashCDTimer <= 0 && dashTimer <= 0)
+            {
+                activeMoveSpeed = dashSpeed;
+                dashTimer = dashLength;
+            }
+        }
+
+        if(dashTimer > 0)
+        {
+            dashTimer -= Time.deltaTime;
+            if(dashTimer <= 0)
+            {
+                activeMoveSpeed = moveSpeed;
+                dashCDTimer = dashCooldown;
+            }
+        }
+
+        if(dashCDTimer > 0)
+        {
+            dashCDTimer -= Time.deltaTime;
         }
 
         lastShot -= Time.deltaTime;
