@@ -65,4 +65,12 @@ public class PlayerHealthController : MonoBehaviour
         PlayerController.instance.bodySr.color = new Color(1, 1, 1, 1);
     }
 
+    public void HealPlayer(int healAmount)
+    {
+        currentHealth = Mathf.Min(maxHealth, currentHealth + healAmount);
+
+        UIController.instance.healthSlider.value = currentHealth;
+        UIController.instance.healthText.text = currentHealth.ToString() + " / " + maxHealth.ToString();
+    }
+
 }
