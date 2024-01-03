@@ -8,6 +8,10 @@ public class Breakables : MonoBehaviour
     [SerializeField] private GameObject[] brokenPieces;
     [SerializeField] private int maxPieces = 5;
 
+    [SerializeField] private bool shouldDropItem;
+    [SerializeField] private GameObject[] itemsToDrop;
+    [SerializeField] private float itemDropPercent;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -28,6 +32,8 @@ public class Breakables : MonoBehaviour
             {
                 Destroy(gameObject);
                 
+                
+                // mostra os pedacos da caixa
                 int piecesToDrop = Random.Range(0, maxPieces);
 
                 for (int i = 0; i < piecesToDrop; i++)
@@ -35,6 +41,19 @@ public class Breakables : MonoBehaviour
                     int randomPiece = Random.Range(0, brokenPieces.Length);
 
                     Instantiate(brokenPieces[randomPiece], transform.position, transform.rotation);
+                }
+
+                //drop items
+                if (shouldDropItem)
+                {
+                    float dropChance = Random.Range(0f, 100f);
+
+                    if(dropChance < itemDropPercent)
+                    {
+                        int randomItem = Random.Range(0, itemsToDrop.Length);
+
+                        Instantiate(itemsToDrop[randomItem], transform.position, transform.rotation);
+                    }
                 }
             }
         }

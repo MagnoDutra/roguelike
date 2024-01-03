@@ -72,5 +72,4 @@ public class PlayerHealthController : MonoBehaviour
         UIController.instance.healthSlider.value = currentHealth;
         UIController.instance.healthText.text = currentHealth.ToString() + " / " + maxHealth.ToString();
     }
-
 }
