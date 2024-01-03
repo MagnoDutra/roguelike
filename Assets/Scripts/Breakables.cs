@@ -31,7 +31,8 @@ public class Breakables : MonoBehaviour
             if(PlayerController.instance.dashTimer > 0)
             {
                 Destroy(gameObject);
-                
+
+                AudioManager.instance.PlaySFX(0);
                 
                 // mostra os pedacos da caixa
                 int piecesToDrop = Random.Range(0, maxPieces);

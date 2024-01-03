@@ -85,6 +85,7 @@ public class PlayerController : MonoBehaviour
         {
             Instantiate(shootPrefab, firePoint.position, firePoint.rotation);
             lastShot = timeBetweenShots;
+            AudioManager.instance.PlaySFX(12);
         }
 
         if (Input.GetKeyDown(KeyCode.Space))
@@ -95,6 +96,7 @@ public class PlayerController : MonoBehaviour
                 dashTimer = dashLength;
 
                 anim.SetTrigger("dash");
+                AudioManager.instance.PlaySFX(8);
                 PlayerHealthController.instance.MakeInvincible(dashInvincibility);
             }
         }

@@ -31,6 +31,7 @@ public class PlayerBullet : MonoBehaviour
             other.GetComponent<EnemyController>()?.DamageEnemy(50);
         }
 
+        AudioManager.instance.PlaySFX(4);
         Destroy(this.gameObject);
     }
 

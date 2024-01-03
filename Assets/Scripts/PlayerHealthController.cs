@@ -46,9 +46,11 @@ public class PlayerHealthController : MonoBehaviour
             currentHealth--;
             invincibleTimer = invincibleLength;
             PlayerController.instance.bodySr.color = new Color(1,1,1,0.5f);
+            AudioManager.instance.PlaySFX(11);
 
             if (currentHealth <= 0)
             {
+                AudioManager.instance.PlaySFX(9);
                 PlayerController.instance.gameObject.SetActive(false);
                 UIController.instance.deathScreen.SetActive(true);
                 AudioManager.instance.PlayGameOver();

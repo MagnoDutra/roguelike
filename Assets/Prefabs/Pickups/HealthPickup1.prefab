@@ -99,6 +99,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healAmount: 1
+  waitToBeCollected: 0.5
 --- !u!61 &2142887495562628396
 BoxCollider2D:
   m_ObjectHideFlags: 0
