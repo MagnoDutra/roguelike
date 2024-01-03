@@ -5306,6 +5306,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spikes
       objectReference: {fileID: 0}
+    - target: {fileID: 7637813827076378117, guid: 2d3b2590f9f08974c98f4d5be590fd14, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     - target: {fileID: 8152826739954802121, guid: 2d3b2590f9f08974c98f4d5be590fd14, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
