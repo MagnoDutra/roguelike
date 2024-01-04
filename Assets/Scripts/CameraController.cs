@@ -32,4 +32,9 @@ public class CameraController : MonoBehaviour
             moveSpeed * Time.deltaTime
         );
     }
+
+    public void ChangeTarget(Transform newTarget)
+    {
+        target = newTarget;
+    }
 }
