@@ -4572,7 +4572,7 @@ Transform:
   m_GameObject: {fileID: 983554668}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 15.39, y: 19.53, z: 0}
+  m_LocalPosition: {x: -2.67, y: -1.72, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -10987,10 +10987,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5652227075843471777, guid: 9e9154230addbcc4f93dc0a088667930, type: 3}
-      propertyPath: levelToLoad
-      value: Test2
-      objectReference: {fileID: 0}
     - target: {fileID: 7746696844761564577, guid: 9e9154230addbcc4f93dc0a088667930, type: 3}
       propertyPath: m_Name
       value: Level_Exit
@@ -11492,5 +11488,5 @@ SceneRoots:
   - {fileID: 2899312113834804235}
   - {fileID: 1999707035}
   - {fileID: 719338437}
-  - {fileID: 1728410549}
   - {fileID: 1656720469}
+  - {fileID: 1728410549}
