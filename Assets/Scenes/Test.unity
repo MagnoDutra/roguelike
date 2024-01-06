@@ -10509,12 +10509,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3135440909890684254, guid: b14e4a1ac9cd09346882a8ff11c0cf5a, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4532877539059110636, guid: b14e4a1ac9cd09346882a8ff11c0cf5a, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4532877539059110636, guid: b14e4a1ac9cd09346882a8ff11c0cf5a, type: 3}
       propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8351561722996796862, guid: b14e4a1ac9cd09346882a8ff11c0cf5a, type: 3}
+      propertyPath: m_RaycastTarget
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

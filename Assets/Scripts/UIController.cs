@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using UnityEngine.Experimental.Rendering;
+using UnityEngine.SceneManagement;
 
 public class UIController : MonoBehaviour
 {
@@ -17,7 +18,10 @@ public class UIController : MonoBehaviour
     [SerializeField] private float fadeSpeed;
     private bool fadeToBlack;
     private bool fadeOutBlack;
-    
+
+    [SerializeField] private string newGameScene;
+    [SerializeField] private string mainMenuScene;
+
     private void Awake()
     {
         instance = this;
@@ -54,5 +58,15 @@ public class UIController : MonoBehaviour
     {
         fadeToBlack = true;
         fadeOutBlack = false;
+    }
+
+    public void NewGame()
+    {
+        SceneManager.LoadScene(newGameScene);
+    }
+
+    public void ReturnToMainMenu()
+    {
+        SceneManager.LoadScene(mainMenuScene);
     }
 }
