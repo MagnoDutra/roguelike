@@ -21,6 +21,7 @@ public class UIController : MonoBehaviour
 
     [SerializeField] private string newGameScene;
     [SerializeField] private string mainMenuScene;
+    public GameObject pauseMenu;
 
     private void Awake()
     {
@@ -62,11 +63,18 @@ public class UIController : MonoBehaviour
 
     public void NewGame()
     {
+        Time.timeScale = 1f;
         SceneManager.LoadScene(newGameScene);
     }
 
     public void ReturnToMainMenu()
     {
+        Time.timeScale = 1f;
         SceneManager.LoadScene(mainMenuScene);
+    }
+
+    public void Resume()
+    {
+        LevelManager.instance.PauseUnpause();
     }
 }

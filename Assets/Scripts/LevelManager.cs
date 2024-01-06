@@ -9,6 +9,7 @@ public class LevelManager : MonoBehaviour
 
     [SerializeField] private float waitToLoad = 4f;
     [SerializeField] private string nextLevel;
+    public bool isPaused;
 
     private void Awake()
     {
@@ -17,13 +18,15 @@ public class LevelManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        Time.timeScale = 1f;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if(Input.GetKeyDown(KeyCode.Escape)) {
+            PauseUnpause();
+        }
     }
 
     public IEnumerator LevelEnd()
@@ -34,5 +37,21 @@ public class LevelManager : MonoBehaviour
         UIController.instance.StartFadeToBlack();
         yield return new WaitForSeconds(waitToLoad);
         SceneManager.LoadScene(nextLevel); 
-    } 
+    }
+
+    public void PauseUnpause() 
+    {
+        if(!isPaused)
+        {
+            UIController.instance.pauseMenu.SetActive(true);
+            Time.timeScale = 0f;
+            isPaused = true;
+        }
+        else
+        {
+            UIController.instance.pauseMenu.SetActive(false);
+            Time.timeScale = 1f;
+            isPaused = false;
+        }
+    }
 }
