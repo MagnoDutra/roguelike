@@ -29,6 +29,9 @@ public class PlayerController : MonoBehaviour
     private float activeMoveSpeed;
     private Vector2 moveInput;
 
+
+    public bool canMove { get; set; } = true;
+
     private void Awake()
     {
         instance = this;
@@ -45,6 +48,13 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (!canMove) 
+        {   
+            rb.velocity = Vector3.zero;
+            anim.SetBool("isMoving", false);
+            return;
+        }
+
         moveInput.x = Input.GetAxisRaw("Horizontal");
         moveInput.y = Input.GetAxisRaw("Vertical");
 

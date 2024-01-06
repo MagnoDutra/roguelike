@@ -28,7 +28,10 @@ public class LevelManager : MonoBehaviour
 
     public IEnumerator LevelEnd()
     {
-        AudioManager.instance.PlayLevelWin();        
+        AudioManager.instance.PlayLevelWin();
+
+        PlayerController.instance.canMove = false;
+
         yield return new WaitForSeconds(waitToLoad);
         SceneManager.LoadScene(nextLevel); 
     } 
