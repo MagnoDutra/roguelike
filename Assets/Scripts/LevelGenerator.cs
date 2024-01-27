@@ -18,6 +18,9 @@ public class LevelGenerator : MonoBehaviour
 
     public LayerMask whatIsRoom;
 
+    private GameObject endRoom;
+    private List<GameObject> roomList = new List<GameObject>();
+
     // Start is called before the first frame update
     void Start()
     {
@@ -27,7 +30,16 @@ public class LevelGenerator : MonoBehaviour
 
         for (int i = 0; i < distanceToEnd; i++)
         {
-            Instantiate(layoutRoom, generatorPoint.position, generatorPoint.rotation);
+            GameObject newRoom = Instantiate(layoutRoom, generatorPoint.position, generatorPoint.rotation);
+            roomList.Add(newRoom);
+
+            if(i+1 == distanceToEnd)
+            {
+                newRoom.GetComponent<SpriteRenderer>().color = endColor;
+                roomList.RemoveAt(roomList.Count - 1);
+                endRoom = newRoom;
+            }
+
             selectedDirection = (Direction)Random.Range(0, 4);
             MoveGenerationPoint();
 
