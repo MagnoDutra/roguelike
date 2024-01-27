@@ -19,10 +19,16 @@ public class LevelGenerator : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
         Instantiate(layoutRoom, generatorPoint.position, generatorPoint.rotation).GetComponent<SpriteRenderer>().color = startColor;
         selectedDirection = (Direction)Random.Range(0, 4);
         MoveGenerationPoint();
+
+        for (int i = 0; i < distanceToEnd; i++)
+        {
+            Instantiate(layoutRoom, generatorPoint.position, generatorPoint.rotation);
+            selectedDirection = (Direction)Random.Range(0, 4);
+            MoveGenerationPoint();
+        }
         
     }
 
