@@ -16,6 +16,8 @@ public class LevelGenerator : MonoBehaviour
     public float xOffset = 18;
     public float yOffset = 10;
 
+    public LayerMask whatIsRoom;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -28,6 +30,11 @@ public class LevelGenerator : MonoBehaviour
             Instantiate(layoutRoom, generatorPoint.position, generatorPoint.rotation);
             selectedDirection = (Direction)Random.Range(0, 4);
             MoveGenerationPoint();
+
+            while (Physics2D.OverlapCircle(generatorPoint.position, .2f, whatIsRoom))
+            {
+                MoveGenerationPoint();
+            }
         }
         
     }
