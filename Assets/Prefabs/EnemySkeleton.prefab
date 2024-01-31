@@ -165,6 +165,7 @@ MonoBehaviour:
   bullet: {fileID: 3216845436504424933, guid: 98642efb954743540b361f28e239865f, type: 3}
   firePoint: {fileID: 7286790410312743265}
   fireRate: 1
+  shootRange: 0
 --- !u!95 &1688041273392660218
 Animator:
   serializedVersion: 5
@@ -256,8 +257,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 616869117
+  m_SortingLayer: 4
   m_SortingOrder: 1
   m_Sprite: {fileID: -7537196482120660328, guid: 02027016afbc5d544ab92ba819bc8094, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

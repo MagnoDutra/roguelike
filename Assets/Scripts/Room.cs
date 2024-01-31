@@ -6,33 +6,21 @@ public class Room : MonoBehaviour
 {
     [SerializeField] private bool closeWhenEntered;
     [SerializeField] private GameObject[] doors;
-    [SerializeField] private bool openWhenCleared;
 
-    public List<GameObject> enemies = new List<GameObject>();
-
-    private bool roomActive;
+    [HideInInspector]
+    public bool roomActive;
 
     private void Update()
     {
-        if(enemies.Count > 0 && roomActive && openWhenCleared)
-        {
-            for (int i = 0; i < enemies.Count; i++)
-            {
-                if (enemies[i] == null)
-                {
-                    enemies.RemoveAt(i);
-                    i--;
-                }
-            }
 
-            if(enemies.Count == 0)
-            {
-                foreach (GameObject door in doors)
-                {
-                    door.SetActive(false);
-                    closeWhenEntered = false;
-                }
-            }
+    }
+
+    public void OpenDoors()
+    {
+        foreach (GameObject door in doors)
+        {
+            door.SetActive(false);
+            closeWhenEntered = false;
         }
     }
 
