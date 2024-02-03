@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 594240989764701601}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 8.5, y: 0, z: 0}
+  m_LocalPosition: {x: -8.5, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -347,9 +347,7 @@ MonoBehaviour:
   doors:
   - {fileID: 8267385944433651164}
   - {fileID: 594240989764701601}
-  openWhenCleared: 0
-  enemies:
-  - {fileID: 0}
+  roomActive: 0
 --- !u!50 &7121811723421396374
 Rigidbody2D:
   serializedVersion: 4
